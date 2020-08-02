@@ -69,6 +69,7 @@ rabbit.Circle()         # 调用兔子的方法，打印输出
 
 
 
+
 # 创建类：外星物种(毒液)
 class Alien_Species:
     # 构造方法，外星物种毒液的属性：
@@ -101,7 +102,6 @@ alien_Species.transformation()               # 调用毒液的方法，打印输
 
 
 
-
 # 创建子类，继承于外星物种(屠杀,毒液的儿子)
 class Carnage(Alien_Species):
     # 继承父类的构造方法
@@ -128,9 +128,6 @@ print(f"屠杀也具有父亲毒液的属性：{carnage.attribute1},{carnage.att
 print(f"屠杀的性格（属性）：{carnage.character1}，{carnage.character2}")
 carnage.insane()         # 调用屠杀的方法，打印输出
 carnage.overbearing()   # 调用屠杀的方法，打印输出
-
-
-
 
 
 
