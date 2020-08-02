@@ -36,7 +36,7 @@ monkey.louse()               # 调用小猴子的方法，打印输出
 
 # 创建类：兔子
 class Rabbit:
-    # 定义兔子的属性：
+    # 构造方法，定义兔子的属性：
     def __init__(self,colour,body,eyes):
         self.colour = colour  # 颜色
         self.body = body      # 身体
@@ -104,12 +104,13 @@ alien_Species.transformation()               # 调用毒液的方法，打印输
 
 # 创建子类，继承于外星物种(屠杀,毒液的儿子)
 class Carnage(Alien_Species):
-    # 继承父类的构造方法
+    # 继承父类的构造方法，新增了两个属于屠杀的构造方法
     def __init__(self,attribute1,attribute2,attribute3,character1,character2):
         # 继承父类的属性
         super().__init__(attribute1,attribute2,attribute3)
-        self.character1 = character1    # 屠杀的属性：暴戾
-        self.character2 = character2    # 屠杀的属性：疯狂
+        # 定义屠杀的属性*2，通过传入的参数得出
+        self.character1 = character1    # 属性1：暴戾
+        self.character2 = character2    # 属性2：疯狂
 
     # 使用def关键字定义方法
     def insane(self):
