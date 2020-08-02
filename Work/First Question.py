@@ -1,7 +1,7 @@
 """
 用类和面向对象的思想，“描述”生活中任意接触到的东西（比如动物、小说里面的人物，不做限制，随意发挥），数量为5个
 """
-# 创建一个类：猴
+# 创建类：猴
 class Monkey:
     # 猴的属性：
     Thick = "hair"      # 浓密的毛发
@@ -34,11 +34,7 @@ monkey.louse()               # 调用小猴子的方法，打印输出
 
 
 
-
-
-
-
-# 创建一个类：兔子
+# 创建类：兔子
 class Rabbit:
     # 定义兔子的属性：
     def __init__(self,colour,body,eyes):
@@ -73,15 +69,7 @@ rabbit.Circle()         # 调用兔子的方法，打印输出
 
 
 
-
-
-
-
-
-
-
-
-# 创建一个类：外星物种(毒液)
+# 创建类：外星物种(毒液)
 class Alien_Species:
     # 构造方法，外星物种毒液的属性：
     def __init__(self,attribute1,attribute2,attribute3):
@@ -114,8 +102,7 @@ alien_Species.transformation()               # 调用毒液的方法，打印输
 
 
 
-
-# 创建一个子类，继承于外星物种(屠杀,毒液的儿子)
+# 创建子类，继承于外星物种(屠杀,毒液的儿子)
 class Carnage(Alien_Species):
     # 继承父类的构造方法
     def __init__(self,attribute1,attribute2,attribute3,character1,character2):
@@ -141,7 +128,6 @@ print(f"屠杀也具有父亲毒液的属性：{carnage.attribute1},{carnage.att
 print(f"屠杀的性格（属性）：{carnage.character1}，{carnage.character2}")
 carnage.insane()         # 调用屠杀的方法，打印输出
 carnage.overbearing()   # 调用屠杀的方法，打印输出
-
 
 
 
@@ -188,13 +174,5 @@ class Fight:
 fight = Fight(10000,5000,10,4000)
 # 调用battle方法，传入毒液的血量、攻击力，防御值
 fight.battle(20000,100000,10000)
-
-
-
-
-
-
-
-
 
 
