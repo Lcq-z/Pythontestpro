@@ -1,7 +1,7 @@
 """
 用类和面向对象的思想，“描述”生活中任意接触到的东西（比如动物、小说里面的人物，不做限制，随意发挥），数量为5个
 """
-# 创建一个类：猴
+# 创建类：猴
 class Monkey:
     # 猴的属性：
     Thick = "hair"      # 浓密的毛发
@@ -34,13 +34,9 @@ monkey.louse()               # 调用小猴子的方法，打印输出
 
 
 
-
-
-
-
-# 创建一个类：兔子
+# 创建类：兔子
 class Rabbit:
-    # 定义兔子的属性：
+    # 构造方法，定义兔子的属性：
     def __init__(self,colour,body,eyes):
         self.colour = colour  # 颜色
         self.body = body      # 身体
@@ -74,14 +70,7 @@ rabbit.Circle()         # 调用兔子的方法，打印输出
 
 
 
-
-
-
-
-
-
-
-# 创建一个类：外星物种(毒液)
+# 创建类：外星物种(毒液)
 class Alien_Species:
     # 构造方法，外星物种毒液的属性：
     def __init__(self,attribute1,attribute2,attribute3):
@@ -113,24 +102,23 @@ alien_Species.transformation()               # 调用毒液的方法，打印输
 
 
 
-
-
-# 创建一个子类，继承于外星物种(屠杀,毒液的儿子)
+# 创建子类，继承于外星物种(屠杀,毒液的儿子)
 class Carnage(Alien_Species):
-    # 继承父类的构造方法
+    # 继承父类的构造方法，新增了两个属于屠杀的构造方法
     def __init__(self,attribute1,attribute2,attribute3,character1,character2):
         # 继承父类的属性
         super().__init__(attribute1,attribute2,attribute3)
-        self.character1 = character1    # 屠杀的属性：暴戾
-        self.character2 = character2    # 屠杀的属性：疯狂
+        # 定义屠杀的属性*2，通过传入的参数得出
+        self.character1 = character1    # 属性1：暴戾
+        self.character2 = character2    # 属性2：疯狂
 
     # 使用def关键字定义方法
     def insane(self):
-        print("屠杀：”父亲他变了，我不再认同他，它将是我的死敌“")  # 它会与它的父亲毒液为敌
+        print("屠杀：”父亲他变了，我不再认同他，它将是我的死敌“")  # 打印输出，表示屠杀它会与它的父亲毒液为敌
 
     # 使用def关键字定义方法
     def overbearing(self):
-        print("屠杀：”我需要找到那个对人类慈爱的父亲与蜘蛛侠，然后杀掉他们，屠尽一切！”")   # 表示屠杀为超级大反派，和它的父亲毒液与蜘蛛侠为敌
+        print("屠杀：”我需要找到那个对人类慈爱的父亲与蜘蛛侠，然后杀掉他们，屠尽一切！”")   # 打印输出，表示屠杀为超级大反派
 
 
 # 类的实例化，传入5个参数，分别是父亲毒液的三个属性和’屠杀‘自己的两个属性。
@@ -146,11 +134,7 @@ carnage.overbearing()   # 调用屠杀的方法，打印输出
 
 
 
-
-
-
-
-# 创建类：屠杀和毒液战斗
+# 创建类：屠杀和毒液的战斗
 class Fight:
     # 构造方法，定义屠杀的属性：
     def __init__(self,hp,power,defense,anger):
@@ -178,23 +162,15 @@ class Fight:
             print("哦，我亲爱的父亲，你输了，我将吞掉你，然后再干掉蜘蛛侠！")
             print(f"屠杀的血量：{self.hp}")   # 通过字面量插值的方法，拼接字符串，打印输出
             print(f"毒液的血量：{venom_hp}")  # 通过字面量插值的方法，拼接字符串，打印输出
-        # 如果毒液的血量 > 屠杀的血量  打印内容
+        # 如果毒液的血量 > 屠杀的血量  打印内容，屠杀的血量，毒液的血量
         elif venom_hp > self.hp:
             print("孩子，我们之前都错了，不能随意造杀戮，之前的错事，我会弥补也会重新教导你")
             print(f"屠杀的血量：{self.hp}")   # 通过字面量插值的方法，拼接字符串，打印输出
             print(f"毒液的血量：{venom_hp}")  # 通过字面量插值的方法，拼接字符串，打印输出
 
-# 类实例化,传入屠杀血量、武力值、怒气值，防御值
+# 类实例化,传入屠杀的血量、武力值、怒气值，防御值
 fight = Fight(10000,5000,10,4000)
 # 调用battle方法，传入毒液的血量、攻击力，防御值
 fight.battle(20000,100000,10000)
-
-
-
-
-
-
-
-
 
 
