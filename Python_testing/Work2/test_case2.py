@@ -17,7 +17,6 @@ class TestCalc:
         # 判断result为小数的时,使用round函数进行四舍五入并保留小数点后两位
         if isinstance(result, float):
             result = round(result, 2)
-
         # 断言
         assert get_adddatas[2] == result
 
@@ -30,7 +29,6 @@ class TestCalc:
         # 判断result为小数的时,使用round函数进行四舍五入并保留小数点后两位
         if isinstance(result, float):
             result = round(result, 2)
-
         # 断言
         assert get_subdatas[2] == result
 
@@ -43,7 +41,6 @@ class TestCalc:
         # 判断result为小数的时,使用round函数进行四舍五入并保留小数点后两位
         if isinstance(result, float):
             result = round(result, 2)
-
         # 断言
         assert get_muldatas[2] == result
 
