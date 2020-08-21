@@ -49,7 +49,7 @@ class TestWeixin:
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
         self.driver.find_element_by_xpath('//*[@id="_hmt_click"]/div[1]/div[4]/div[2]/a[2]/div/span[2]').click()
         sleep(2)
-        self.driver.find_element(By.ID, "js_upload_file_input").send_keys(r'‪C:\Users\XiaoRongYiJiu\ass.xlsx')
+        self.driver.find_element(By.ID, "js_upload_file_input").send_keys(r'‪C:\Users\XiaoRongYiJiu\demo.xlsx')
         sleep(2)
         assert 'demo.xlsx' == self.driver.find_element_by_id('upload_file_name').text
         sleep(4)
