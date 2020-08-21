@@ -47,9 +47,15 @@ class TestWeixin:
 
         # 再次打开企业微信主页面，因为已经获取到带有登录信息的cookie了，此时不需要登录
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
+        
+        # 通过id定位到导入联系人入口并点击
         self.driver.find_element_by_xpath('//*[@id="_hmt_click"]/div[1]/div[4]/div[2]/a[2]/div/span[2]').click()
         sleep(2)
+        
+        # 通过id定位到上传按钮后进行上传文件
         self.driver.find_element(By.ID, "js_upload_file_input").send_keys(r'‪C:\Users\XiaoRongYiJiu\demo.xlsx')
         sleep(2)
+        
+        # 断言：校验上传的文件名是否匹配
         assert 'demo.xlsx' == self.driver.find_element_by_id('upload_file_name').text
         sleep(4)
