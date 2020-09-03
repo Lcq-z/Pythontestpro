@@ -12,11 +12,8 @@ class WorkBench_Page(BasePage6):
                     '.text("打卡").instance(0));')
     # 创建方法：跳转至打卡页面
     def go_to_ClochIn_Page(self):
-        # 1. 在工作台页面中下滑动查找"打卡"元素后点击  2. 点击外出打卡按钮  3. 点击打卡按钮
+        # 在工作台页面中下滑动查找"打卡"元素后点击
         self.find(*self._dianji_daka).click()
 
         # return self是为了实现返回当前页面时依然可以实现链式调用
         return ClochIn_Page(self.driver)
-
-
-
