@@ -7,6 +7,7 @@ class ClochIn_Page(BasePage6):
     _waichu_daka = (MobileBy.ID, "com.tencent.wework:id/ghc")
     _kaishi_daka = (MobileBy.ID, "com.tencent.wework:id/alq")
     _jieguo = (MobileBy.XPATH, "//*[contains(@text, '外出打卡成功')]")
+    
     # 创建方法：点击外出打卡
     def Clock_in(self):
         # 1. 点击外出打卡按钮  2. 点击外出打卡按钮
