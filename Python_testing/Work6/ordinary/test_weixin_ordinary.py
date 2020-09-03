@@ -54,6 +54,6 @@ class TestQiYeWeiXin:
                                  '.scrollIntoView(new UiSelector()'
                                  '.text("打卡").instance(0));').click()
         self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/ghc").click()
-        self.driver.find_element(MobileBy.XPATH, '//*[contains(@text, "次外出")]').click()
+        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/alq").click()
         result = self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/mn").text
         assert "外出打卡成功" == result
