@@ -53,10 +53,10 @@ class BasePage6:
         # self.driver.back()
         self.driver.quit()
 
-    # 对find_element进行封装，实现PO实际模式，并且让代码的可读性更高、更加美观
+    # 对find_element进行封装，实现PO设计模式，并且让代码的可读性更高、更加美观
     def find(self, by, value):
         return self.driver.find_element(by, value)
 
-    # 对find_elements进行封装，现PO实际模式，并且让代码的可读性更高、更加美观
+    # 对find_elements进行封装，实现PO设计模式，并且让代码的可读性更高、更加美观
     def finds(self, by, value):
         return self.driver.find_elements(by, value)
