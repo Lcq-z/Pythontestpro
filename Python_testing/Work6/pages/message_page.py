@@ -9,7 +9,7 @@ class Message_Page(BasePage6):
     # 定义只在此类中使用的私有变量
     _dianji_workbench = (MobileBy.XPATH, "//*[@text='工作台']")
 
-    # 创建方法：跳转工作台页面
+    # 创建方法：跳转至工作台页面
     def go_to_WorkBench_Page(self):
         # 点击工作台
         self.find(*self._dianji_workbench).click()

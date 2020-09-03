@@ -24,7 +24,7 @@ class BasePage6:
             # desired_caps['dontStopAppOnReset'] = 'true'
 
             # 等待页面空闲的时间为1(主要解决动态画面加载过慢的问题)
-            desired_caps['settings[waitForIdleTimeout]'] = 3
+            desired_caps['settings[waitForIdleTimeout]'] = 1
 
             # 跳过安装、权限设置等操作（可以在调试或者运行的时候提升运行速度）
             desired_caps['skipDeviceInitialization'] = 'true'

@@ -2,7 +2,7 @@ from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 
 
-class TestWei1:
+class TestQiYeWeiXin:
 
     def setup(self):
         # 定义字典
@@ -38,24 +38,24 @@ class TestWei1:
         # 固定写法：pycharm连接到appium的地址
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
 
-        # 隐式等待10秒，（很重要！等页面加载完毕，再进行定位操作）
-        self.driver.implicitly_wait(10)
+        # 隐式等待4秒，（很重要！待页面加载完毕，再进行定位操作）
+        self.driver.implicitly_wait(4)
 
     def teardown(self):
         # back返回上一层的意思
         # self.driver.back()
-        # self.driver.back()
         self.driver.quit()
 
     def test_Clock_in(self):
+        # 定位到工作台后点击
         self.driver.find_element(MobileBy.XPATH, "//*[@text='工作台']").click()
-
+        # 在工作台页面中下滑动查找"打卡"元素后点击
         self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
                                  'new UiScrollable(new UiSelector()'
                                  '.scrollable(true).instance(0))'
                                  '.scrollIntoView(new UiSelector()'
                                  '.text("打卡").instance(0));').click()
         self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/ghc").click()
-        self.driver.find_element(MobileBy.XPATH, '//*[contains(@text, "次外出")]').click()
+        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/alq").click()
         result = self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/mn").text
         assert "外出打卡成功" == result
