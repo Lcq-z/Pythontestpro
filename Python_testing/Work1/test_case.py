@@ -1,10 +1,10 @@
 # 导入需要使用的库
 import pytest
 import yaml
-from Python_testing.Calc import Calculator
+from Python_testing.Work1.Calc import Calculator
+
 # 打开yCalculator.yaml文件，对测试用例参数化，因yaml文件中有中文字符串，所以设置中文编码UTF-8
 with open("Calculator.yaml", encoding='UTF-8') as f:
-
     # 将打开的yaml文件内容赋值给变量datas
     datas = yaml.safe_load(f)
 
@@ -23,6 +23,7 @@ with open("Calculator.yaml", encoding='UTF-8') as f:
     # 获取测试用例除法的id
     div_ids = datas['div']['div_ids']
     print(div_ids)
+
 
 # 定义测试计算器的类
 class TestCalc:
@@ -44,25 +45,23 @@ class TestCalc:
     def teardown(self):
         print("测试用例执行完毕")
 
-
     # 对定义的test_add方法进行参数化
-    @pytest.mark.parametrize('a,b,expect',add_datas,ids=add_ids)
-    def test_add(self,a,b,expect):
+    @pytest.mark.parametrize('a,b,expect', add_datas, ids=add_ids)
+    def test_add(self, a, b, expect):
         # 调用计算器的add方法
-        result = self.calc.add(a,b)
+        result = self.calc.add(a, b)
         # 判断result为小数的时,使用round函数进行四舍五入并保留小数点后两位
         if isinstance(result, float):
             result = round(result, 2)
         # 判断a或b的类型为字符串时，抛出异常信息
-        elif isinstance(a,str) or isinstance(b,str):
+        elif isinstance(a, str) or isinstance(b, str):
             raise ValueError("计算器的值不能使用字符串，或为空")
         # 断言
         assert expect == result
 
-
     # 对定义的test_div方法进行参数化
-    @pytest.mark.parametrize('a,b,expect',div_datas,ids=div_ids)
-    def test_div(self,a,b,expect):
+    @pytest.mark.parametrize('a,b,expect', div_datas, ids=div_ids)
+    def test_div(self, a, b, expect):
 
         try:
             # 调用计算器的div方法

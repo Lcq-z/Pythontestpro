@@ -1,5 +1,5 @@
 # 导入TongLao类
-from Work.TianShanTongLao import TongLao
+from Python_testing.Work0.TianShanTongLao import TongLao
 # 定义一个XuZhu类，继承于TongLao
 class XuZhu(TongLao):
     # 构造方法
