@@ -2,6 +2,9 @@ from appium.webdriver.common.mobileby import MobileBy
 from Python_testing.Work8.pages.Member_information_page import MemberInformationPage
 from Python_testing.Work8.pages.base_page import BasePage
 
+"""
+添加成员按钮界面
+"""
 
 class AddMemberPage(BasePage):
     # 定义只在此类中使用的私有变量
