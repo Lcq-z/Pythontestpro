@@ -45,7 +45,7 @@ class TestLabel_anagement(BaseApi):
         list = self.label.get_label_memberlist()
         # 调用封装jsonpath方法，传入对应的参数（json格式参数，jsonpath表达式）后，赋值给label_list
         label_list = self.send_jsonpath(list, '$..taglist')
-        # 断言tagid 是否在label_list当中
+        # 断言tagid 是否不在label_list当中
         assert 3 not in label_list
 
 
